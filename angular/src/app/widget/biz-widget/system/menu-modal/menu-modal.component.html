@@ -1,0 +1,81 @@
+<form nz-form [formGroup]="validateForm">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="menuName">Tên</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <input nz-input formControlName="menuName" id="menuName" placeholder="Tên" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="menuType">Loại hình</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <nz-radio-group (ngModelChange)="changeMenuType($event)" formControlName="menuType">
+        <label nz-radio [nzValue]="'C'">Menu</label>
+        <label nz-radio [nzValue]="'F'">Button</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item *ngIf="menuType === 'C'">
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="icon">Icon zorro</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <nz-input-group [nzAddOnAfter]="selIcon">
+        <input nz-input formControlName="icon" />
+      </nz-input-group>
+      <ng-template #selIcon>
+        <app-icon-sel [visible]="selIconVisible" (selIcon)="seledIcon($event)"></app-icon-sel>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item *ngIf="menuType === 'C'">
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="alIcon">Icon Ali</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input formControlName="alIcon" id="alIcon" placeholder="Icon Ali" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="code">Code</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <input nz-input formControlName="code" id="code" placeholder="Code" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item *ngIf="menuType === 'C'">
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="path">Path</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <input nz-input formControlName="path" id="path" placeholder="Path" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="orderNum">Loại</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <nz-input-number formControlName="orderNum" [nzMin]="1" [nzStep]="1"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item *ngIf="menuType === 'C'">
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="visible"><H3></H3>Hiển thị</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <nz-radio-group formControlName="visible">
+        <label nz-radio [nzValue]="true">Đúng</label>
+        <label nz-radio [nzValue]="false">Sái</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="status">Change</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <nz-switch formControlName="status" nzCheckedChildren="có sẵn" nzUnCheckedChildren="Vô hiệu hóa"></nz-switch>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item *ngIf="menuType === 'C'">
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="newLinkFlag">Liên kết</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <nz-radio-group formControlName="newLinkFlag">
+        <label nz-radio [nzValue]="true">Đúng</label>
+        <label nz-radio [nzValue]="false">Sai</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<ng-template #combineTpl let-control>
+  <ng-container *ngIf="control.hasError('message')">{{ control.errors.message }}</ng-container>
+  <ng-container *ngIf="control.hasError('required')">Phần bắt buộc</ng-container>
+</ng-template>

@@ -1,0 +1,35 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap">
+  <button class="m-r-8 m-b-8" nz-button (click)="showDailog()">Tạo một phương thức tùy chỉnh như một dịch vụ</button>
+  <button class="m-r-8 m-b-8" nz-button (click)="showDailog1()">Thẻ phương thức được kéo bằng cách chuyển nzTitle</button>
+  <button class="m-r-8 m-b-8" nz-button (click)="showDailogConfirm()">Tạo xác nhận có thể kéo được (bởi The Bright Moon in the Mountains)</button>
+  <button class="m-r-8 m-b-8" nz-button (click)="showDailogInfo()">Tạo thông tin có thể kéo được (bởi mặt trăng trên núi)</button>
+  <button class="m-r-8 m-b-8" nz-button (click)="showDailogSuccess()">Tạo thành công có thể kéo được (bởi The Bright Moon in the Mountains)</button>
+  <button class="m-r-8 m-b-8" nz-button (click)="showDailogError()">Tạo lỗi có thể kéo được (bởi mặt trăng trên núi)</button>
+  <button class="m-r-8 m-b-8" nz-button (click)="showDailogWarning()">Tạo cảnh báo có thể kéo được (bởi The Bright Moon in the Mountains)</button>
+  <button class="m-r-8 m-b-8" nz-button (click)="isVisibleByDir = true">Tạo lệnh (bởi trăng sáng trên núi)</button>
+</div>
+
+<nz-modal [nzTitle]="dragTpl" [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <p>Ánh trăng trước khi đi ngủ</p>
+    <p>Nghi ngờ có sương giá trên mặt đất</p>
+    <p>Ngước nhìn vầng trăng sáng</p>
+    <p>Cúi đầu nhớ quê hương</p>
+  </ng-container>
+</nz-modal>
+
+<nz-modal nzxModalDrag [nzTitle]="'Tạo lệnh có thể được kéo và thả'" [(nzVisible)]="isVisibleByDir" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <p>Ánh trăng trước khi đi ngủ</p>
+    <p>Nghi ngờ có sương giá trên mặt đất</p>
+    <p>Ngước nhìn vầng trăng sáng</p>
+    <p>Cúi đầu nhớ quê hương</p>
+  </ng-container>
+</nz-modal>
+
+<!--Bạn có thể giải phóng đoạn mã sau và đặt nó vào nzTitle của phương thức để đạt được hiệu ứng kéo.-->
+<ng-template #dragTpl>
+  <div class="hand-model-move" cdkDrag cdkDragBoundary="nz-modal-container" cdkDragHandle cdkDragRootElement=".ant-modal-content">Đây là một phương thức có thể kéo được</div>
+</ng-template>

@@ -1,0 +1,61 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap">
+  <div nz-row [nzGutter]="[32, 16]">
+    <div nz-col nzSpan="24">
+      <nz-card class="m-b-10" nzSize="default" [nzTitle]="nzBasicTitle">
+        <nz-descriptions nzBordered [nzColumn]="{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
+          <nz-descriptions-item nzTitle="tên tài khoản">test</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="tên nick">test-VB</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="số liên lạc">15695909xxx</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Email">190848757@qq.com</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Địa chỉ">112 Lê Đại Hành , TP.Huế</nz-descriptions-item>
+        </nz-descriptions>
+      </nz-card>
+
+      <nz-card class="m-b-10" nzSize="default" [nzTitle]="nzVerticalTitle">
+        <nz-descriptions nzBordered nzLayout="vertical" [nzColumn]="{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 2 }">
+          <nz-descriptions-item nzTitle="tên tài khoản">test</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="tên nick">test-VB</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="số liên lạc">15695909xxx</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Email">190848757@qq.com</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Địa chỉ">112 Lê Đại Hành , TP.Huế</nz-descriptions-item>
+        </nz-descriptions>
+      </nz-card>
+
+      <nz-card class="m-b-10" nzSize="default" nzTitle="userDescription">
+        <nz-descriptions nzBordered [nzColumn]="{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
+          <nz-descriptions-item nzTitle="tên tài khoản">test</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="tên nick">test-VB</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="số liên lạc">15695909xxx</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Email">190848757@qq.com</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Địa chỉ">112 Lê Đại Hành , TP.Huế</nz-descriptions-item>
+        </nz-descriptions>
+      </nz-card>
+
+      <nz-card class="m-b-10" nzSize="default" nzTitle="无边框">
+        <nz-descriptions [nzColumn]="{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }">
+          <nz-descriptions-item nzTitle="tên tài khoản">test</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="tên nick">test-VB</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="số liên lạc">15695909xxx</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Email">190848757@qq.com</nz-descriptions-item>
+          <nz-descriptions-item nzTitle="Địa chỉ">112 Lê Đại Hành , TP.Huế</nz-descriptions-item>
+        </nz-descriptions>
+      </nz-card>
+    </div>
+  </div>
+
+  <ng-template #nzBasicTitle>
+    <div>
+      ví dụ cơ bản
+      <span nz-tooltip nzTooltipTitle="giúp đỡ"><i nz-icon nzTheme="outline" nzType="question-circle"></i></span>
+    </div>
+  </ng-template>
+
+  <ng-template #nzVerticalTitle>
+    <div>
+      ví dụ theo chiều dọc
+      <span nz-tooltip nzTooltipTitle="giúp đỡ"><i nz-icon nzTheme="outline" nzType="question-circle"></i></span>
+    </div>
+  </ng-template>
+</div>

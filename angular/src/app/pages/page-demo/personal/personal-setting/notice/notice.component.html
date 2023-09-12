@@ -1,0 +1,26 @@
+<nz-list nzItemLayout="horizontal">
+  <nz-list-item>
+    <ul nz-list-item-actions>
+      <nz-list-item-action>
+        <nz-switch nzCheckedChildren="Mở" nzUnCheckedChildren="Đống" [(ngModel)]="i.password"></nz-switch>
+      </nz-list-item-action>
+    </ul>
+    <nz-list-item-meta nzDescription="Tin nhắn từ người dùng khác sẽ được thông báo dưới dạng tin nhắn nội bộ" nzTitle="Mật khẩu tài khoản"></nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item>
+    <ul nz-list-item-actions>
+      <nz-list-item-action>
+        <nz-switch nzCheckedChildren="Mở" nzUnCheckedChildren="Đống" [(ngModel)]="i.messages"></nz-switch>
+      </nz-list-item-action>
+    </ul>
+    <nz-list-item-meta nzDescription="Tin tức hệ thống sẽ được thông báo dưới dạng thư nội bộ" nzTitle="Thông tin hệ thống"></nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item>
+    <ul nz-list-item-actions>
+      <nz-list-item-action>
+        <nz-switch nzCheckedChildren="Mở" nzUnCheckedChildren="Đống" [(ngModel)]="i.todo"></nz-switch>
+      </nz-list-item-action>
+    </ul>
+    <nz-list-item-meta nzDescription="in đang chờ xử lý sẽ được thông báo dưới dạng thư nội bộ" nzTitle="Tin nhắn đang chờ xử lý"></nz-list-item-meta>
+  </nz-list-item>
+</nz-list>

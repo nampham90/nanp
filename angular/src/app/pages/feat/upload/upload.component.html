@@ -1,0 +1,39 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+<div class="normal-table-wrap">
+  <nz-card nzTitle="Ví dụ đơn giản, địa chỉ tệp được máy chủ trả về là hợp nhất và chức năng trình diễn sẽ không lưu tệp đã tải lên.">
+    <nz-upload [nzAction]="uploadUrl" [nzFileList]="fileList" [nzLimit]="1" [nzName]="'document'" [nzShowButton]="true" [nzSize]="1024 * 5" (nzChange)="handleChange($event)">
+      <button nz-button>
+        <i nz-icon nzType="upload"></i>
+        Nhập nguyên liệu (tải lên thử nghiệm tối đa 5M)
+      </button>
+    </nz-upload>
+  </nz-card>
+  <nz-card class="m-t-20" nzTitle="嵌入表单，加入表单验证">
+    <form nz-form nzLayout="vertical" [formGroup]="validateForm">
+      <nz-form-item nz-col nzSpan="24">
+        <nz-form-control [nzErrorTip]="combineTpl" [nzSm]="6" [nzXs]="24">
+          <nz-form-label [nzSm]="14" [nzXs]="24">ruột thừa:</nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <nz-upload [nzAction]="uploadUrl" [nzFileList]="fileFormList" [nzLimit]="1" [nzName]="'document'" [nzSize]="1024 * 5" (nzChange)="uploadFn($event)">
+              <button nz-button>
+                <i nz-icon nzType="upload"></i>
+                Tải lên tệp đính kèm (tải lên thử nghiệm tối đa 5M)
+              </button>
+              <input formControlName="file" [hidden]="true" />
+            </nz-upload>
+          </nz-form-control>
+        </nz-form-control>
+        <nz-form-item class="m-t-20" nz-row>
+          <nz-form-control [nzSpan]="14">
+            <button nz-button nzType="primary" (click)="submitForm()">Submit</button>
+            <button class="m-l-10" nz-button nzType="default" (click)="resetForm()">cài lại</button>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-form-item>
+    </form>
+  </nz-card>
+</div>
+<ng-template #combineTpl let-control>
+  <ng-container *ngIf="control.hasError('message')">{{ control.errors.message }}</ng-container>
+  <ng-container *ngIf="control.hasError('required')">Phần bắt buộc</ng-container>
+</ng-template>

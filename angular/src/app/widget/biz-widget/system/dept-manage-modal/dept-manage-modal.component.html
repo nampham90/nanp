@@ -1,0 +1,30 @@
+<form nz-form [formGroup]="addEditForm">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="tenphongban">Tên bộ phận</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <input nz-input formControlName="tenphongban" name="tenphongban" placeholder="Vui lòng nhập tên phòng ban" id="departmentName" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="state">Tình trạng bộ phận</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <nz-radio-group formControlName="state">
+        <label nz-radio [nzValue]="false">Vô hiệu hóa</label>
+        <label nz-radio [nzValue]="true">Cho phép</label>
+      </nz-radio-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="orderNum">Loại</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="combineTpl">
+      <input nz-input formControlName="orderNum" name="orderNum" placeholder="Loại" id="orderNum" />
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+<ng-template #combineTpl let-control>
+  <ng-container *ngIf="control.hasError('message')">{{ control.errors.message }}</ng-container>
+  <ng-container *ngIf="control.hasError('required')">Phần bắt buộc</ng-container>
+</ng-template>

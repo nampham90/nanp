@@ -1,0 +1,59 @@
+<div class="register-form-wrap">
+  <h3 class="title">Đăng ký tài khoản</h3>
+  <form class="login-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Vui lòng nhập địa chỉ email!">
+        <nz-input-group [nzSize]="'large'">
+          <input type="text" formControlName="email" nz-input placeholder="Email" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Vui lòng nhập mật khẩu !">
+        <nz-input-group [nzSize]="'large'">
+          <input type="password" formControlName="password" nz-input placeholder="Ít nhất 6 ký tự, phân biệt chữ hoa chữ thường" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Vui lòng xác nhận mật khẩu!">
+        <nz-input-group [nzSize]="'large'">
+          <input type="text" formControlName="confimpassword" nz-input placeholder="Xác nhận mật khẩu" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Vui lòng nhập số điện thoại!">
+        <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate" [nzSize]="'large'">
+          <input type="text" formControlName="name" nz-input placeholder="Số điện thoại" />
+        </nz-input-group>
+      </nz-form-control>
+
+      <ng-template #addOnBeforeTemplate>
+        <nz-select [ngModel]="'84'" [ngModelOptions]="{ standalone: true }">
+          <nz-option nzLabel="+84" nzValue="84"></nz-option>
+          <nz-option nzLabel="+87" nzValue="87"></nz-option>
+        </nz-select>
+      </ng-template>
+    </nz-form-item>
+
+    <nz-form-item nz-row nzJustify="space-between">
+      <nz-form-control class="flex-1" nz-col nzErrorTip="Vui lòng nhập mã xác nhận!" style="max-width: 65%" [nzSm]="14" [nzXs]="14">
+        <nz-input-group [nzSize]="'large'">
+          <input type="password" formControlName="password" nz-input placeholder="Mật khẩu" />
+        </nz-input-group>
+      </nz-form-control>
+      <button class="p-0" nz-button nz-col nzType="default" [nzSize]="'large'" [nzSm]="9" [nzXs]="9">Nhận mã xác nhận</button>
+    </nz-form-item>
+
+    <div class="login-form-margin" nz-row nzAlign="middle" nzJustify="space-between">
+      <div nz-col [nzSpan]="12">
+        <button class="login-form-button login-form-margin" nz-button nzSize="large" [nzType]="'primary'">Đăng ký</button>
+      </div>
+      <div class="text-right" nz-col [nzSpan]="9">
+        <a class="password-login" routerLink="/login/login-form">Sử dụng tài khoản hiện có để đăng nhập</a>
+      </div>
+    </div>
+  </form>
+</div>

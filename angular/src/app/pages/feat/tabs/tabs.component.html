@@ -1,0 +1,29 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+<div class="normal-table-wrap">
+  <nz-card nzTitle="Nhập văn bản vào ô nhập bên dưới và nội dung sẽ được lưu sau khi chuyển đổi">
+    <nz-alert class="m-b-8" nzMessage="Thao tác này sẽ không ảnh hưởng đến tiêu đề trang mà chỉ sửa đổi tiêu đề Tab" nzType="warning"></nz-alert>
+
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixButton">
+      <input #tabTitleInput type="text" nz-input placeholder="input search text" />
+    </nz-input-group>
+    <ng-template #suffixButton>
+      <button nz-button nzSearch nzType="primary" (click)="changeTabTitle(tabTitleInput.value)">Đặt tiêu đề tab</button>
+    </ng-template>
+  </nz-card>
+
+  <nz-card class="m-t-10" nzTitle="Thao tác tab">
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="closeRight()">đóng bên phải</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="closeLeft()">đóng bên trái</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="closeOther()">đóng khác</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="closeCurrent()">đóng hiện tại</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="refresh()">Làm mới</button>
+  </nz-card>
+
+  <nz-card class="m-t-10" nzTitle="Thao tác mở chi tiết">
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="openDetailPage(1)">Mở chi tiết Hoạt động 1</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="openDetailPage(2)">Mở chi tiết Hoạt động 2</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="openDetailPage(3)">Mở chi tiết Hoạt động 3</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="openDetailPage(4)">Mở chi tiết Hoạt động 4</button>
+    <button class="m-r-8 m-b-8" nz-button nzSearch nzType="primary" (click)="openDetailPage(5)">Mở chi tiết Hoạt động 5</button>
+  </nz-card>
+</div>

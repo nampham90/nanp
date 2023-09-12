@@ -1,0 +1,60 @@
+<div class="login-form-wrap">
+  <form class="login-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-tabset [nzAnimated]="false">
+      <nz-tab nzTitle="Đăng nhập">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Email: namandroid.it@gmail.com">
+            <nz-input-group nzPrefixIcon="mail" [nzSize]="'large'">
+              <input type="text" formControlName="email" nz-input placeholder="Email người dùng" [placeholder]="'Email: namandroid.it@gmail.com'" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Password: Nampham90">
+            <nz-input-group nzPrefixIcon="lock" [nzSize]="'large'">
+              <input type="password" autocomplete="on" formControlName="password" nz-input placeholder="Mật khẩu" [placeholder]="'Mật khẩu: Nampham90'" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-tab>
+
+      <nz-tab nzTitle="Đăng nhập bằng số điện thoại">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Vui lòng nhập tên người dùng!">
+            <nz-input-group nzPrefixIcon="mobile" [nzSize]="'large'">
+              <input type="text" autocomplete="on" formControlName="mobile" nz-input placeholder="Số điện thoại" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row nzJustify="space-between">
+          <nz-form-control class="flex-1" nz-col nzErrorTip="Vui lòng nhập mã xác nhận!" style="max-width: 65%" [nzSm]="14" [nzXs]="14">
+            <nz-input-group nzPrefixIcon="mail" [nzSize]="'large'">
+              <input type="password" formControlName="password" nz-input placeholder="Mật khẩu" />
+            </nz-input-group>
+          </nz-form-control>
+          <button class="p-0" nz-button nz-col nzType="default" [nzSize]="'large'" [nzSm]="9" [nzXs]="9">Lấy mã xác nhận</button>
+        </nz-form-item>
+      </nz-tab>
+    </nz-tabset>
+    <div class="login-form-margin" nz-row>
+      <div nz-col [nzSpan]="12">
+        <label formControlName="remember" nz-checkbox>
+          <span> Đăng nhập tự động</span>
+        </label>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <a class="login-form-forgot">Quên mật khẩu</a>
+      </div>
+    </div>
+    <button class="login-form-button login-form-margin" nz-button nzSize="large" [nzType]="'primary'">Đăng nhập</button>
+    <div class="other-way">
+      <div class="other-login">
+        <span>Đăng nhập bằng cách khác</span>
+        <i nz-icon nzTheme="fill" nzType="github"></i>
+        <i nz-icon nzTheme="fill" nzType="instagram"></i>
+        <i nz-icon nzTheme="fill" nzType="facebook"></i>
+      </div>
+      <a routerLink="/login/register-form">Đăng ký người dùng</a>
+    </div>
+  </form>
+</div>

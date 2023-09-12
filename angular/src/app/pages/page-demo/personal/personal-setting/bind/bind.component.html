@@ -1,0 +1,32 @@
+<nz-list nzItemLayout="horizontal">
+  <nz-list-item [nzActions]="[githubOp]">
+    <ng-template #githubOp>
+      <a class="operate-text">Liên kết</a>
+    </ng-template>
+    <nz-list-item-meta nzDescription="Hiện tại chưa liên kết tài khoản Github" nzTitle="Liên kết Github" [nzAvatar]="githubAvatar">
+      <ng-template #githubAvatar>
+        <i class="icon-sm" nz-icon nzType="github"></i>
+      </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[taobaoOp]">
+    <ng-template #taobaoOp>
+      <a class="operate-text">Liên kết</a>
+    </ng-template>
+    <nz-list-item-meta nzDescription="Hiện tại chưa liên kết tài khoản Instagram" nzTitle="Liên kết " [nzAvatar]="taobaoAvatar">
+      <ng-template #taobaoAvatar>
+        <i class="icon-sm color-taobao" nz-icon nzType="instagram"></i>
+      </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[alipayOp]">
+    <ng-template #alipayOp>
+      <a class="operate-text">Liên kết</a>
+    </ng-template>
+    <nz-list-item-meta nzDescription="Hiện tại chưa liên kết tài khoản Facebook" nzTitle="Liên kết Facebook" [nzAvatar]="alipayAvatar">
+      <ng-template #alipayAvatar>
+        <i class="icon-sm color-alipay" nz-icon nzType="facebook"></i>
+      </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+</nz-list>

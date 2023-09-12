@@ -1,0 +1,37 @@
+<nz-card [nzBodyStyle]="{ padding: 0 }">
+  <nz-tabset nzCentered [nzTabBarStyle]="{ paddingLeft: '15px', paddingRight: '15px' }">
+    <nz-tab nzTitle="Thông báo(4)">
+      <ng-container *ngTemplateOutlet="notificationTpl"></ng-container>
+    </nz-tab>
+    <nz-tab nzTitle="Hệ thống(3)">
+      <ng-container *ngTemplateOutlet="notificationTpl"></ng-container>
+    </nz-tab>
+    <nz-tab nzTitle="Sắp tới(4)">
+      <ng-container *ngTemplateOutlet="notificationTpl"></ng-container>
+    </nz-tab>
+  </nz-tabset>
+</nz-card>
+<ng-template #notificationTpl>
+  <nz-list nzItemLayout="horizontal">
+    <nz-list-item *ngFor="let i of 4 | numberLoop">
+      <nz-list-item-meta>
+        <nz-list-item-meta-title>
+          <div class="flex p-l-10 p-r-10">
+            <span class="flex-1" nz-typography nzEllipsis>Thay đổi mã code khẩn cấp từ bên thứ ba</span>
+            <nz-tag class="m-l-10" [nzColor]="'red'">Sắp hết hạn</nz-tag>
+          </div>
+        </nz-list-item-meta-title>
+        <nz-list-item-meta-description>
+          <div class="p-l-10 p-r-10">
+            <p nz-typography nzEllipsis nzType="secondary" [nzEllipsisRows]="3">Đã gửi bởi Guan Lin vào ngày 06-01-2017, yêu cầu hoàn thành nhiệm vụ thay đổi mã code trước ngày 07-01-2017</p>
+            <p>Thời gian kiểm duyệt: 22-02-2023</p>
+          </div>
+        </nz-list-item-meta-description>
+      </nz-list-item-meta>
+    </nz-list-item>
+    <!--  <nz-list-empty *ngIf="deptNoticeListObj.checkRecordDtos.length === 0"></nz-list-empty>-->
+    <nz-list-footer>
+      <div class="center operate-text full-with full-height">Xóa thông báo</div>
+    </nz-list-footer>
+  </nz-list>
+</ng-template>

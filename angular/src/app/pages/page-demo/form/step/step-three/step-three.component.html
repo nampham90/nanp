@@ -1,0 +1,16 @@
+<nz-result nzStatus="success" nzSubTitle="Dự kiến ​​sẽ đến trong vòng hai giờ" nzTitle="Hoạt động thành công">
+  <div nz-result-extra>
+    <button nz-button nzType="primary" (click)="next.emit()">Chuyển một khoản tiền</button>
+    <button nz-button>Xem hóa đơn</button>
+  </div>
+</nz-result>
+<div class="desc-bg center" nz-result-content [class.p-l-16]="stepDirection === 'vertical'">
+  <div class="determine-wrap p-b-0">
+    <nz-descriptions class="m-t-20 p-0">
+      <nz-descriptions-item nzTitle="Tài khoản thanh toán">ant-design@alipay.com</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Những tài khoản có thể nhận được">test@example.com</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Tên người nhận">Alex</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Số tiền chuyển khoản">500đ</nz-descriptions-item>
+    </nz-descriptions>
+  </div>
+</div>

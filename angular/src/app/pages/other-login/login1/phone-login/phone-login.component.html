@@ -1,0 +1,22 @@
+<div>
+  <h2 class="m-b-8" [class.is-over-model]="isOverModel">Đăng nhập bằng điện thoại</h2>
+  <div class="full-with">
+    <form class="login-form-wrap" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="số điện thoại!">
+          <input type="text" formControlName="userName" nz-input nzSize="large" placeholder="số điện thoại" [placeholder]="'số điện thoại'" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-row nzJustify="space-between">
+        <nz-form-control class="flex-1" nz-col nzErrorTip="Mã xác minh SMS!" style="max-width: 65%" [nzSm]="16" [nzXs]="15">
+          <input type="text" formControlName="userName" nz-input nzSize="large" placeholder="Mã xác nhận" [placeholder]="'Mã xác nhận'" />
+        </nz-form-control>
+        <button class="p-0" nz-button nz-col nzType="default" [nzSize]="'large'" [nzSm]="7" [nzXs]="7">
+          <span [ngStyle]="{ 'font-size': currentEquipmentWidth === equipmentWidthEnum.xs ? '0.8rem' : '1rem' }">lấy mã xác minh</span>
+        </button>
+      </nz-form-item>
+      <button class="full-with m-t-15 btn" nz-button nzSize="large" [nzType]="'primary'">Đăng nhập</button>
+      <button class="full-with m-t-15" nz-button nzSize="large" [nzType]="'default'" (click)="goOtherWay(typeEnum.Normal)"><Thead></Thead>rở lại</button>
+    </form>
+  </div>
+</div>

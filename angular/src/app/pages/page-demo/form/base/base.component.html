@@ -1,0 +1,73 @@
+<!--Phần dầu-->
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap">
+  <nz-card>
+    <app-water-mark />
+    <form class="form-wrap" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label nzFor="title" nzRequired [nzSm]="6" [nzXs]="24">Tiêu đề</nz-form-label>
+        <nz-form-control nzErrorTip="vui lòng nhập tiêu đề" [nzSm]="14" [nzXs]="24">
+          <input id="title" formControlName="title" nz-input placeholder="đặt tên cho mục tiêu" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="date" nzRequired [nzSm]="6" [nzXs]="24">Ngày bắt đầu và ngày kết thúc</nz-form-label>
+        <nz-form-control nzErrorTip="Vui lòng chọn ngày bắt đầu và ngày kết thúc" [nzSm]="14" [nzXs]="24">
+          <nz-range-picker class="with-full" formControlName="date"></nz-range-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="desc" nzRequired [nzSm]="6" [nzXs]="24">Mô tả mục tiêu</nz-form-label>
+        <nz-form-control nzErrorTip="Vui lòng nhập mô tả mục tiêu" [nzSm]="14" [nzXs]="24">
+          <textarea id="desc" formControlName="desc" nz-input placeholder="Vui lòng nhập mục tiêu công việc theo giai đoạn của bạn" rows="4"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="standard" nzRequired [nzSm]="6" [nzXs]="24">Số liệu</nz-form-label>
+        <nz-form-control nzErrorTip="Vui lòng nhập số liệu" [nzSm]="14" [nzXs]="24">
+          <textarea id="standard" formControlName="standard" nz-input placeholder="Vui lòng nhập số liệu" rows="4"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="client" nzTooltipTitle="khán giả mục tiêu" [nzSm]="6" [nzXs]="24">khách hàng</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input id="client" formControlName="client" nz-input placeholder="Vui lòng mô tả khách hàng mà bạn phục vụ. Đối với khách hàng nội bộ, vui lòng @tên/mã số nhân viên" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="invitedCommenter" [nzSm]="6" [nzXs]="24">Mời người đánh giá</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input id="invitedCommenter" formControlName="invitedCommenter" nz-input placeholder="Vui lòng trực tiếp @tên/mã số công việc, có thể mời tối đa 5 người" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="weights" [nzSm]="6" [nzXs]="24">Trọng lượng</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-input-number id="weights" formControlName="weights" [nzPlaceHolder]="'Vùi lòng nhập'" [nzStep]="1"></nz-input-number>
+          %
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label nzFor="public" [nzSm]="6" [nzXs]="24">Mục tiêu công cộng</nz-form-label>
+        <nz-form-control nz-row nzExtra="Khách hàng và người đánh giá được chia sẻ theo mặc định" [nzSm]="14" [nzXs]="24">
+          <nz-radio-group id="public" formControlName="isPublic">
+            <label nz-radio nzValue="1">công cộng</label>
+            <label nz-radio nzValue="2">Công khai một phần</label>
+            <label nz-radio nzValue="3">riêng tư</label>
+          </nz-radio-group>
+          <nz-select *ngIf="validateForm.get('isPublic')!.value === '2'" class="m-t-5" nzMode="tags" nzPlaceHolder="Please select">
+            <nz-option *ngFor="let option of listOfOption" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-row>
+        <nz-form-control [nzOffset]="6" [nzSpan]="14">
+          <button nz-button nzType="primary">Xác nhận</button>
+          <button class="m-l-10" nz-button nzType="default">reset</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-card>
+</div>

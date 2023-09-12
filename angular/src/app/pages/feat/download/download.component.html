@@ -1,0 +1,16 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap">
+  <nz-card class="m-b-10" nzTitle="Theo giao diện nền tải xuống luồng tập tin">
+    <button nz-button nzType="primary" (click)="fileStreamDownload()">Tải xuống luồng tập tin</button>
+  </nz-card>
+  <nz-card class="m-b-10" nzTitle="Tải file theo địa chỉ file">
+    <button nz-button nzType="primary" (click)="fileStreamDownload()">Tải xuống địa chỉ tệp</button>
+  </nz-card>
+  <nz-card class="m-b-10" nzTitle="tải xuống luồng base64">
+    <button nz-button nzType="primary" (click)="fileStreamDownload()">tải xuống luồng base64</button>
+  </nz-card>
+  <nz-card class="m-b-10" nzTitle="Tải xuống Url hình ảnh, nếu có vấn đề về tên miền chéo, bạn cần xử lý tên miền chéo hình ảnh">
+    <button nz-button nzType="primary" (click)="fileStreamDownload()">Tải xuống Url hình ảnh</button>
+  </nz-card>
+</div>

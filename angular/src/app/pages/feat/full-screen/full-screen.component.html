@@ -1,0 +1,27 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap">
+  <nz-card nzTitle="Window Full Screen">
+    <nz-space>
+      <button *nzSpaceItem nz-button nzType="primary" (click)="intoFull()">Chuyển đến toàn màn hình</button>
+      <button *nzSpaceItem nz-button nzType="primary" (click)="toggle()">Bật chế độ toàn màn hình</button>
+      <button *nzSpaceItem nz-button nzType="primary" (click)="exitFull()">Thoát toàn màn hình</button>
+    </nz-space>
+    <div>
+      Trạng thái toàn màn hình hiện tại:
+      <span class="sp-28 text-error">{{ !isFullscreenFlag }}</span>
+    </div>
+  </nz-card>
+
+  <nz-card class="m-t-15" nzTitle="Dom Full Screen">
+    <button nz-button nzType="primary" (click)="intoDomFull(dom)">Toàn bộ dom bên dưới là toàn màn hình</button>
+  </nz-card>
+
+  <div #dom class="m-t-30 center" style="height: 600px; background: white; margin-left: auto; margin-right: auto">
+    <div>
+      <p class="text-center sp-28 text-error">Tôi là dom có ​​thể được hiển thị toàn màn hình</p>
+
+      <button nz-button nzType="primary" (click)="exitFull()">Dom của tôi hủy toàn màn hình</button>
+    </div>
+  </div>
+</div>

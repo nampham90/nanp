@@ -1,0 +1,45 @@
+<nz-list nzItemLayout="horizontal">
+  <nz-list-item [nzActions]="[passwordOp]">
+    <ng-template #passwordOp>
+      <a class="operate-text">Chỉnh sửa</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Mật khẩu tài khoản" [nzDescription]="passwordDesc">
+      <ng-template #passwordDesc>
+        Độ mạnh của mật khẩu hiện tại :
+        <span class="text-green">Mạnh</span>
+      </ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[phoneOp]">
+    <ng-template #phoneOp>
+      <a class="operate-text">Chỉnh sửa</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Điện thoại bảo mật" [nzDescription]="phoneDesc">
+      <ng-template #phoneDesc>Đã liên kết với điện thoại:：159****2231</ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[questionOp]">
+    <ng-template #questionOp>
+      <a class="operate-text">Chỉnh sửa</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Mật khẩu bảo vệ" [nzDescription]="questionDesc">
+      <ng-template #questionDesc>Chưa thiết lập câu hỏi bảo mật, câu hỏi bảo mật có thể bảo vệ an ninh tài khoản một cách hiệu quả</ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[emailOp]">
+    <ng-template #emailOp>
+      <a class="operate-text">Chỉnh sửa</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Địa chỉ email dự phòng" [nzDescription]="emailDesc">
+      <ng-template #emailDesc>Đã liên kết với địa chỉ email：cip*****.com</ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+  <nz-list-item [nzActions]="[mfaOp]">
+    <ng-template #mfaOp>
+      <a class="operate-text">Chỉnh sửa</a>
+    </ng-template>
+    <nz-list-item-meta nzTitle="Thiết bị MFA" [nzDescription]="mfaDesc">
+      <ng-template #mfaDesc> - Chưa liên kết thiết bị MFA, sau khi liên kết, bạn có thể xác nhận hai lần.</ng-template>
+    </nz-list-item-meta>
+  </nz-list-item>
+</nz-list>

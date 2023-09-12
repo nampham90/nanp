@@ -1,0 +1,46 @@
+<div>
+  <h2 class="m-b-8" [class.is-over-model]="isOverModel">Đăng nhập</h2>
+  <div class="full-with">
+    <form class="login-form-wrap" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Vui lòng nhập tên người dùng!">
+          <input type="text" formControlName="userName" nz-input nzSize="large" placeholder="tên tài khoản" [placeholder]="'Đăng nhập trực tiếp mà không cần tài khoản hoặc mật khẩu'" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="xin vui lòng nhập mật khẩu!">
+          <nz-input-group [nzSize]="'large'" [nzSuffix]="suffixTemplate">
+            <input autocomplete="on" formControlName="password" nz-input placeholder="mật khẩu" [placeholder]="'no username and password,just login'" [type]="passwordVisible ? 'text' : 'password'" />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="passwordVisible = !passwordVisible"></i>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <div nz-row nzJustify="space-between">
+        <div nz-col>
+          <label formControlName="remember" nz-checkbox>
+            <span>Nhớ mật khẩu</span>
+          </label>
+        </div>
+        <div nz-col>
+          <a class="operate-text">quên mật khẩu?</a>
+        </div>
+      </div>
+      <button class="full-with m-t-15 btn" nz-button nzSize="large" [nzType]="'primary'">Đăng nhập</button>
+      <div class="m-t-15" nz-row nzJustify="space-between">
+        <button class="m-b-8" nz-button nz-col nzType="default" [nzSm]="7" [nzXs]="24" (click)="goOtherWay(typeEnum.Phone)">Đăng nhập bằng điện thoại</button>
+        <button class="m-b-8" nz-button nz-col nzType="default" [nzSm]="7" [nzXs]="24" (click)="goOtherWay(typeEnum.Qr)">Đăng nhập bằng cách quét mã</button>
+        <button class="m-b-8" nz-button nz-col nzType="default" [nzSm]="7" [nzXs]="24" (click)="goOtherWay(typeEnum.Register)">Đăng ký</button>
+      </div>
+      <nz-divider nzPlain nzText="Các phương thức đăng nhập khác"></nz-divider>
+      <div nz-row nzJustify="space-around">
+        <i nz-col nz-icon nzTheme="fill" nzType="alipay-circle"></i>
+        <i nz-col nz-icon nzTheme="fill" nzType="taobao-circle"></i>
+        <i nz-col nz-icon nzTheme="fill" nzType="weibo-circle"></i>
+        <i nz-col nz-icon nzTheme="fill" nzType="qq-circle"></i>
+        <i nz-col nz-icon nzTheme="fill" nzType="google-circle"></i>
+      </div>
+    </form>
+  </div>
+</div>

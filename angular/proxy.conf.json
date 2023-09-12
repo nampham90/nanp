@@ -1,0 +1,21 @@
+
+{
+  "/site": {
+    "target": "http://localhost:3000/",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/site": ""
+    }
+  },
+  "/localhost": {
+    "target": "http://localhost:4201/",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/localhost": "/"
+    }
+  }
+}
+
+

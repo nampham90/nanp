@@ -1,0 +1,83 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap">
+  <div nz-row [nzGutter]="[32, 16]">
+    <div nz-col [nzLg]="24" [nzMd]="24" [nzSm]="24" [nzXl]="8" [nzXs]="24" [nzXXl]="10">
+      <nz-card class="m-b-10" nzSize="default" nzTitle="BasicButton Color">
+        <div class="title">success</div>
+        <button class="success" nz-button>thành công</button>
+        <button disabled nz-button nzType="default">Vô hiệu hóa</button>
+        <button class="success" nz-button nzLoading nzType="default">loading</button>
+        <a nz-button nzType="link" style="color: #55d187">link</a>
+        <a nz-button nzLoading nzType="link" style="color: #55d187">loading link</a>
+        <a disabled nz-button nzType="link">disabled link</a>
+
+        <div class="title">warning</div>
+        <button class="warning" nz-button>thành công</button>
+        <button disabled nz-button nzType="default">Vô hiệu hóa</button>
+        <button class="warning" nz-button nzLoading nzType="default">loading</button>
+        <a nz-button nzType="link" style="color: #efbd47">link</a>
+        <a nz-button nzLoading nzType="link" style="color: #efbd47">loading link</a>
+        <a disabled nz-button nzType="link">disabled link</a>
+
+        <div class="title">error</div>
+        <button nz-button nzDanger nzType="primary">thành công</button>
+        <button disabled nz-button nzType="default">Vô hiệu hóa</button>
+        <button nz-button nzDanger nzLoading nzType="primary">loading</button>
+        <a nz-button nzType="link" style="color: #ed6f6f">link</a>
+        <a nz-button nzLoading nzType="link" style="color: #ed6f6f">loading link</a>
+        <a disabled nz-button nzType="link">disabled link</a>
+
+        <div class="title">ghost</div>
+        <button class="m-b-8" nz-button nzGhost nzType="default" style="color: #55d187; border-color: #55d187">thành công ảo</button>
+        <button class="m-b-8" nz-button nzGhost nzType="default" style="color: #efbd47; border-color: #efbd47">cảnh báo ma</button>
+        <button class="m-b-8" nz-button nzGhost nzType="default" style="color: #ed6f6f; border-color: #ed6f6f">lỗi ma</button>
+        <button class="m-b-8" disabled nz-button nzGhost nzType="dashed" style="color: #efbd47; border-color: #efbd47">cảnh báo ma bị vô hiệu hóa</button>
+        <button class="m-b-8" nz-button nzGhost nzType="default" style="color: #ed6f6f; border-color: #ed6f6f">ma nguy hiểm</button>
+      </nz-card>
+    </div>
+    <div nz-col [nzLg]="24" [nzMd]="24" [nzSm]="24" [nzXl]="16" [nzXs]="24" [nzXXl]="14">
+      <nz-card class="m-b-10" nzSize="default" nzTitle="BasicButton Types">
+        <div class="title">primary</div>
+        <button class="m-b-8" nz-button style="color: #ffffff; border-color: #0960bd; background-color: #0960bd">
+          <i nz-icon nzTheme="outline" nzType="menu-unfold"></i>
+          nút chính
+        </button>
+        <button class="m-b-8" disabled nz-button nzType="default">Vô hiệu hóa</button>
+        <button class="m-b-8" nz-button nzDanger nzType="primary">
+          <i nz-icon nzTheme="outline" nzType="menu-unfold"></i>
+          Sự nguy hiểm
+        </button>
+        <button class="m-b-8" nz-button nzLoading nzType="primary">loading</button>
+        <a class="m-b-8" nz-button nzType="link">link</a>
+        <a class="m-b-8" nz-button nzLoading nzType="link">loading link</a>
+        <a class="m-b-8" disabled nz-button nzType="link">disabled link</a>
+
+        <div class="title">default</div>
+        <button class="m-b-8" nz-button>mặc định</button>
+        <button class="m-b-8" disabled nz-button nzType="default">Vô hiệu hóa</button>
+        <button class="m-b-8" nz-button nzType="default" style="color: red; border-color: red">Sự nguy hiểm</button>
+        <button class="m-b-8" nz-button nzLoading>loading</button>
+        <a class="m-b-8" nz-button nzType="link">link</a>
+        <a class="m-b-8" nz-button nzLoading nzType="link">loading link</a>
+        <a class="m-b-8" disabled nz-button nzType="link">disabled link</a>
+
+        <div class="title">dashed</div>
+        <button class="m-b-8" nz-button nzType="dashed">dashed</button>
+        <button class="m-b-8" disabled nz-button nzType="dashed">Vô hiệu hóa</button>
+        <button class="m-b-8" nz-button nzType="dashed" style="color: red; border-color: red">Sự nguy hiểm</button>
+        <button class="m-b-8" nz-button nzLoading nzType="dashed">loading</button>
+
+        <div class="title">ghost 
+          Nút ma thông thường thường được sử dụng trên nền màu</div>
+        <div class="ghost-border p-t-8 p-b-8 p-l-8">
+          <button class="m-b-8" nz-button nzGhost nzType="default" style="color: #0960bd; border-color: #0960bd">ma chính</button>
+          <button class="m-b-8" nz-button nzGhost nzType="default" style="color: #fff; border-color: #fff">ma mặc định</button>
+          <button class="m-b-8" nz-button nzGhost nzType="dashed">ma vô hiệu hóa</button>
+          <button class="m-b-8" nz-button nzGhost nzType="default">Vô hiệu hóa</button>
+          <button class="m-b-8" nz-button nzGhost nzLoading nzType="default">loading</button>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>

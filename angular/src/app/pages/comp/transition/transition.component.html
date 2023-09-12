@@ -1,0 +1,16 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+<div class="normal-table-wrap">
+  <button class="m-r-8" nz-button nzType="primary" (click)="currentComp = 'home'">hoạt hình chính</button>
+  <button class="m-r-8" nz-button nzType="primary" (click)="currentComp = 'EnterLeave'">Vào/Ra</button>
+  <button class="m-r-8" nz-button nzType="primary" (click)="currentComp = 'Dynamic'">Thông số động</button>
+  <button class="m-r-8 m-t-8" nz-button nzType="primary" (click)="currentComp = 'Experiments'">thực nghiệm</button>
+
+  <nz-card class="m-t-8">
+    <div class="center">
+      <app-demo-main *ngIf="currentComp === 'home'" />
+      <app-demo-on-enter-on-leave *ngIf="currentComp === 'EnterLeave'" />
+      <app-demo-dynamic-params *ngIf="currentComp === 'Dynamic'" />
+      <app-experiments *ngIf="currentComp === 'Experiments'" />
+    </div>
+  </nz-card>
+</div>

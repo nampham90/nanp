@@ -1,0 +1,12 @@
+<p>
+  Giá trị mang lại:
+  <span class="sp-28 text-error">{{ params.name }}</span>
+</p>
+<form [formGroup]="validateForm">
+  <nz-form-item>
+    <nz-form-label nzRequired>Hãy thử nhập giá trị và nhấp vào OK</nz-form-label>
+    <nz-form-control nzErrorTip="Phần bắt buộc">
+      <input formControlName="password" nz-input [placeholder]="'Nhập nội dung và nhấn OK để quay về bên ngoài'" />
+    </nz-form-control>
+  </nz-form-item>
+</form>

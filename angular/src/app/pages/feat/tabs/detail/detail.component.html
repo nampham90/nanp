@@ -1,0 +1,9 @@
+<div class="normal-table-wrap">
+  <p>
+    Mang đến đây, id thu được từ tuyến đường
+    <span class="sp-28 text-error">{{ id }}</span>
+  </p>
+  <p>Nhập giá trị vào ô nhập bên dưới, sau đó chuyển tab để trải nghiệm hiệu ứng bộ nhớ đệm của thành phần</p>
+  <input nz-input />
+  <p *ngFor="let item of 60 | numberLoop; let index = index">Để chứng minh bộ đệm thanh cuộn {{ index }}</p>
+</div>

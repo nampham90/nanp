@@ -1,0 +1,62 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo"></app-page-header>
+<ng-template #huongdanTpl>
+  <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" (click)="showVideo()">
+      <span nz-icon nzType="star" nzTheme="outline"></span>Hướng dẫn
+  </button>
+</ng-template>
+
+<div class="normal-table-wrap">
+    <nz-card nzHoverable [nzBodyStyle]="{ 'padding-bottom': 0 }" class="m-b-10">
+        <form nz-form>
+            <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24 }">
+                <div nz-col [nzXXl]="8" [nzXl]="8" [nzLg]="8" [nzMd]="12" [nzSm]="24" [nzXs]="24">
+                    <nz-form-item>
+                        <nz-form-label [nzFor]="">{{formItemNm[4]}}</nz-form-label>
+                        <nz-form-control>
+                          <input nz-input name="text" [(ngModel)]="searchParam.urldisplayid" placeholder="search name" (keyup.enter)="searchName($event)"/>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div nz-col [nzXXl]="8" [nzXl]="8" [nzLg]="8" [nzMd]="12" [nzSm]="24" [nzXs]="24"></div>
+                <div nz-col [nzXXl]="8" [nzXl]="8" [nzLg]="8" [nzMd]="12" [nzSm]="24" [nzXs]="24"  class="text-right p-0 m-b-10">
+                    <button (click)="getDataList()" nz-button [nzType]="'primary'"> <i nz-icon nzType="search"></i>{{formItemNm[5]}}</button>
+                    <button nz-button class="m-l-15" (click)="resetForm()"><i nz-icon nzType="close-circle" nzTheme="outline"></i>{{formItemNm[6]}}</button>
+                </div>
+            </div>
+        </form>
+    </nz-card>
+    <app-card-table-wrap [tableTitle]="formItemNm[7]" (reload)="reloadTable()" [btnTpl]="tableBtns">
+        <app-ant-table
+          (selectedChange)="selectedChecked($event)"
+          [checkedCashArrayFromComment]="checkedCashArray"
+          (changePageSize)="changePageSize($event)"
+          (changePageNum)="getDataList($event)"
+          [tableConfig]="tableConfig"
+          [tableData]="dataList"
+        ></app-ant-table>
+        <ng-template #operationTpl let-id="id" let-sotienno="sotienno">
+            <span *appAuth="ActionCode.HuongdanUpdate" class="operate-text">
+                <button nz-button nzType="primary" nzGhost (click)="edit(id)">{{formItemNm[10]}}</button>
+            </span>
+            <!-- <span *appAuth="ActionCode.KhachhangTattoan" class="operate-text"> -->
+                <!-- <button *ngIf="sotienno > 0" nz-button nzType="primary" nzGhost (click)="tattoan(id,sotienno)">Tất toán</button> -->
+            <!-- </span> -->
+        </ng-template>
+        <ng-template #linkidTpl let-id="id" let-sotienno="sotienno" let-name="name" let-diachi="diachi" let-dienthoai="dienthoai">
+            <!-- <a nz-button nzType="link"  (click)="getItem(id,sotienno,name,diachi,dienthoai)"><span>{{id}}</span></a> -->
+        </ng-template>
+        <ng-template #sotienno let-sotienno="sotienno">
+            <!-- <span>{{sotienno*1000 | currency : "VND" : ""}}</span> -->
+        </ng-template>
+    </app-card-table-wrap>
+    <ng-template #tableBtns>
+        <button *appAuth="ActionCode.HuongdanAdd" (click)="add()" nz-button nzType="primary" class="m-r-8">
+          <i nz-icon nzType="plus"></i>
+          {{formItemNm[8]}}
+        </button>
+        <button *appAuth="ActionCode.HuongdanallDel" (click)="allDel()" nz-button nzType="default">
+          <i nz-icon nzType="delete"></i>
+          {{formItemNm[9]}}
+        </button>
+    </ng-template>
+</div>

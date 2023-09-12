@@ -1,0 +1,28 @@
+<form nz-form [formGroup]="addEditForm">
+    <nz-form-item>
+      <nz-form-label [nzSm]="4" [nzXs]="24" nzRequired nzFor="idyoutube">ID Youtube</nz-form-label>
+      <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Vui lòng nhập ID Youtube">
+        <input nz-input formControlName="idyoutube" name="idyoutube" placeholder="Vui lòng nhập ID Youtube" id="idyoutube" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSm]="4" [nzXs]="24" nzRequired nzFor="urldisplayid">Mã màn hình</nz-form-label>
+        <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Vui lòng nhập mã màn hình">
+          <input nz-input formControlName="urldisplayid" name="urldisplayid" placeholder="vd: khachhang/spkh00101" id="urldisplayid" />
+        </nz-form-control>
+    </nz-form-item>
+  
+    <nz-form-item>
+        <nz-form-label [nzSm]="4" [nzXs]="24" nzFor="title">Tiêu đề</nz-form-label>
+        <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Vui lòng nhập ">
+          <input nz-input formControlName="title" name="title" placeholder="Vui lòng nhập ..." id="title"/>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="4" [nzXs]="24" nzFor="content">Nội dung</nz-form-label>
+        <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Vui lòng nhập ...">
+          <input nz-input formControlName="content" name="content" placeholder="Vui lòng nhập ..." id="content"/>
+        </nz-form-control>
+    </nz-form-item>
+  </form>

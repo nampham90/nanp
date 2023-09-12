@@ -1,0 +1,60 @@
+<nz-card [nzBordered]="false">
+  <nz-result
+    nzStatus="success"
+    nzSubTitle="Trang kết quả gửi được dùng để phản hồi kết quả xử lý của một loạt tác vụ thao tác, nếu chỉ là thao tác đơn giản thì hãy sử dụng Phản hồi nhắc nhở chung của Tin nhắn. Vùng văn bản này có thể hiển thị các hướng dẫn bổ sung đơn giản, nếu có nhu cầu hiển thị “biên lai” thì vùng màu xám bên dưới có thể hiển thị những nội dung phức tạp hơn."
+    nzTitle="gửi thành công"
+  >
+    <div nz-result-content>
+      <h5 nz-typography>Tên dự án</h5>
+      <div class="m-b-20" nz-row [nzGutter]="16">
+        <div nz-col [nzLg]="12" [nzMd]="12" [nzSm]="12" [nzXl]="6" [nzXs]="24">
+          <span>Mã dự án:</span>
+          23421
+        </div>
+        <div nz-col [nzLg]="12" [nzMd]="12" [nzSm]="12" [nzXl]="6" [nzXs]="24">
+          <span>hiệu trưởng:</span>
+          Nam Phạm
+        </div>
+        <div nz-col [nzLg]="24" [nzMd]="24" [nzSm]="24" [nzXl]="12" [nzXs]="24">
+          <span>Thời gian hiệu quả:</span>
+          2016-12-12 ~ 2017-12-12
+        </div>
+      </div>
+      <nz-steps nzProgressDot [nzCurrent]="1" [nzDirection]="stepDirection">
+        <nz-step [nzDescription]="createDesc" [nzTitle]="'Tạo dự án'">
+          <ng-template #createDesc>
+            <div class="sp-14 relative">
+              <div class="m-t-8 m-b-4">
+                Nam Phạm
+                <i class="m-l-8" nz-icon nzType="dingding"></i>
+              </div>
+              <div class="m-t-8 m-b-4">2016-12-12 12:32</div>
+            </div>
+          </ng-template>
+        </nz-step>
+        <nz-step [nzDescription]="checkedDesc" [nzTitle]="'Bộ phận xem xét sơ bộ'">
+          <ng-template #checkedDesc>
+            <div class="sp-14 relative">
+              <div class="m-t-8 m-b-4">
+                Nam Phạm
+                <i class="m-l-8" nz-icon nzType="dingding"></i>
+              </div>
+              <div class="m-t-8 m-b-4">
+                <a class="operate-text">nhanh lên</a>
+              </div>
+            </div>
+          </ng-template>
+        </nz-step>
+        <nz-step [nzTitle]="'đánh giá tài chính'"></nz-step>
+        <nz-step [nzTitle]="'Hoàn thành'"></nz-step>
+      </nz-steps>
+    </div>
+    <div nz-result-extra>
+      <div nz-row nzJustify="center">
+        <button class="m-r-8" nz-button nzType="primary">Trở lại danh sách</button>
+        <button class="m-r-8" nz-button>Xem các mục</button>
+        <button nz-button>In</button>
+      </div>
+    </div>
+  </nz-result>
+</nz-card>

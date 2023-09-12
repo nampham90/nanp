@@ -1,0 +1,26 @@
+<div class="determine-wrap p-b-0">
+  <nz-alert nzCloseable nzMessage="Sau khi việc chuyển khoản được xác nhận, số tiền sẽ được ghi có trực tiếp vào tài khoản của bên kia và không thể hoàn lại." nzType="info"></nz-alert>
+  <nz-descriptions class="m-t-20">
+    <nz-descriptions-item nzTitle="Tài khoản thanh toán">ant-design@alipay.com</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Những tài khoản có thể nhận được">test@example.com</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Tên người nhận">Alex</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Số tiền chuyển khoản">500đ</nz-descriptions-item>
+  </nz-descriptions>
+  <nz-divider></nz-divider>
+  <form [formGroup]="validateForm">
+    <nz-form-item>
+      <nz-form-label nzFor="password" nzRequired [nzSm]="6" [nzXs]="24">Mật khẩu thanh toán</nz-form-label>
+      <nz-form-control nzErrorTip="Mật khẩu thanh toán" [nzSm]="14" [nzXs]="24">
+        <nz-input-group>
+          <input type="password" formControlName="password" nz-input />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row>
+      <nz-form-control [nzOffset]="6" [nzSpan]="14">
+        <button nz-button nzType="primary" (click)="submit()">Submit</button>
+        <button class="m-l-10" nz-button nzType="default" (click)="previous.emit()">Bước tiếp theo</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>

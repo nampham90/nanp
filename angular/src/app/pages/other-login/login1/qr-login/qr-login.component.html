@@ -1,0 +1,14 @@
+<div>
+  <h2 class="m-b-8" [class.is-over-model]="isOverModel">Đăng nhập bằng cách quét mã</h2>
+  <div class="full-with">
+    <form class="login-form-wrap" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control class="p-24">
+          <qrcode class="center" [errorCorrectionLevel]="'M'" [margin]="0" [qrdata]="'https://github.com/huajian123/ng-ant-admin'" [width]="250"></qrcode>
+          <span class="center sp-14 desc" nz-typography nzType="secondary">Sau khi quét mã xong bấm “Xác nhận” để hoàn tất đăng nhập</span>
+        </nz-form-control>
+      </nz-form-item>
+      <button class="full-with" nz-button nzSize="large" [nzType]="'default'" (click)="goOtherWay(typeEnum.Normal)">Trở lại</button>
+    </form>
+  </div>
+</div>

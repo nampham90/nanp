@@ -1,0 +1,83 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap">
+  <nz-card nzTitle="尽情的操作滚动条吧">
+    <div nz-row nzJustify="space-around">
+      <div class="m-b-8" nz-col [nzLg]="12" [nzMd]="12" [nzSm]="12" [nzXl]="8" [nzXs]="24" [nzXXl]="8">
+        <div id="div-scroll3" class="div-scroll">
+          <p>1. Sanji, tôi muốn ăn thịt</p>
+          <p>2. Chất liệu quần áo của Nami ngày càng ít đi</p>
+          <p>3. Điều đau đớn nhất trong cuộc đời là tỉnh dậy sau một giấc mơ và không có lối thoát. Hạnh phúc là người mơ, nếu không thấy đường để đi thì điều quan trọng nhất là đừng đánh thức anh ta. “Chuyện gì đã xảy ra với Nora” 1923</p>
+          <p>
+            4.
+            Ưu tiên trước mắt của chúng tôi là: thứ nhất là sự sống còn, thứ hai là lương thực và quần áo, và thứ ba là phát triển. Bất cứ ai cản trở tương lai này, dù là cổ xưa hay hiện đại, người hay ma, "Tam trám và ngũ kinh", Bách khúc và Ngàn nhân dân tệ, Bản đồ sông Tianqiu, Kim nhân và Phật ngọc, thuốc tổ tiên, thuốc mỡ bí mật, tất cả đều sẽ bị giẫm đạp.he. “Đột nhiên nghĩ” 1925
+          </p>
+          <p>5. Ngược lại với kẻ độc tài là kẻ nô lệ, có quyền lực thì có thể làm bất cứ điều gì, và đầy kẻ nô lệ khi mất quyền lực. "Tục ngữ" 1933</p>
+          <p>6. Bi kịch phá hủy những điều có giá trị trong cuộc sống để người ta xem, còn hài kịch xé nát những thứ vô giá trị để người ta xem. "Thăm lại sự sụp đổ của chùa Lôi Phong"</p>
+          <p>7. Trên thực tế, trên mặt đất không có đường, khi có nhiều người đi bộ thì sẽ thành đường. "trang chủ"</p>
+        </div>
+      </div>
+
+      <div nz-col [nzLg]="12" [nzMd]="12" [nzSm]="12" [nzXl]="8" [nzXs]="24" [nzXXl]="8">
+        <div id="div-scroll4" class="div-scroll">
+          <p>1. Sanji, tôi muốn ăn thịt</p>
+          <p>2. Chất liệu quần áo của Nami ngày càng ít đi</p>
+          <p>3. Điều đau đớn nhất trong cuộc đời là tỉnh dậy sau một giấc mơ và không có lối thoát. Hạnh phúc là người mơ, nếu không thấy đường để đi thì điều quan trọng nhất là đừng đánh thức anh ta. “Chuyện gì đã xảy ra với Nora” 1923</p>
+          <p>
+            4.
+            Ưu tiên trước mắt của chúng tôi là: thứ nhất là sự sống còn, thứ hai là lương thực và quần áo, và thứ ba là phát triển. Bất cứ ai cản trở tương lai này, dù là cổ xưa hay hiện đại, người hay ma, "Tam trám và ngũ kinh", Bách khúc và Ngàn nhân dân tệ, Bản đồ sông Tianqiu, Kim nhân và Phật ngọc, thuốc tổ tiên, thuốc mỡ bí mật, tất cả đều sẽ bị giẫm đạp.he. “Đột nhiên nghĩ” 1925
+          </p>
+          <p>5. Ngược lại với kẻ độc tài là kẻ nô lệ, có quyền lực thì có thể làm bất cứ điều gì, và đầy kẻ nô lệ khi mất quyền lực. "Tục ngữ" 1933</p>
+          <p>6. Bi kịch phá hủy những điều có giá trị trong cuộc sống để người ta xem, còn hài kịch xé nát những thứ vô giá trị để người ta xem. "Thăm lại sự sụp đổ của chùa Lôi Phong"</p>
+          <p>7. Trên thực tế, trên mặt đất không có đường, khi có nhiều người đi bộ thì sẽ thành đường. "trang chủ"</p>
+        </div>
+      </div>
+    </div>
+  </nz-card>
+</div>
+<button class="m-r-8 m-t-8 m-b-8" nz-button [nzType]="'primary'" (click)="toDocBottom()">Cuộn xuống cuối màn hình</button>
+<button class="m-r-8 m-t-8 m-b-8" nz-button [nzType]="'primary'" (click)="toDoc100()">cuộn đến màn hình 100px</button>
+<button class="m-r-8 m-b-8" nz-button [nzType]="'primary'" (click)="toBox1()">Chỉ định vùng chứa 1 để cuộn</button>
+<button class="m-r-8 m-b-8" nz-button [nzType]="'primary'" (click)="toBox2()">Chỉ định vùng chứa 2 để cuộn</button>
+<nz-card>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <p>Bộ heo rừng ngon nhất thế giới</p>
+  <p>Orc không bao giờ là nô lệ</p>
+  <button nz-button [nzType]="'primary'" (click)="toDocHead()">Cuộn lên đầu màn hình</button>
+</nz-card>

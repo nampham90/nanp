@@ -1,0 +1,43 @@
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+
+<div class="normal-table-wrap bg-color-no p-b-50">
+  <nz-card class="m-b-20" [nzBordered]="true">
+    <nz-descriptions nzBordered nzTitle="Phiên bản" [nzColumn]="{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }" [nzSize]="'small'">
+      <nz-descriptions-item nzTitle="Phiên bản"><nz-tag [nzColor]="'cyan'">1.0.0</nz-tag></nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Thời gian biên dịch cuối cùng">
+        <nz-tag [nzColor]="'cyan'">{{ data | date : dateFormat }}</nz-tag>
+      </nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Địa chỉ tài liệu"><a class="operate-text" href="http://nanp.themenew.net/" target="_blank">Địa chỉ tài liệu</a></nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Địa chỉ xem trước"><a class="operate-text" href="http://nanp.themenew.net//" target="_blank">Địa chỉ xem trước</a></nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Github"><a class="operate-text" href="http://nanp.themenew.net/" target="_blank" >Github</a></nz-descriptions-item>
+      <!-- https://gitee.com/hjxiaoqianduan/ng-ant-admin -->
+      <nz-descriptions-item nzTitle="Mã nguồn"><a class="operate-text" href="http://nanp.themenew.net/" target="_blank">Mã nguồn</a></nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Địa chỉ dự án phiên bản nguyên bản"><a class="operate-text" href="http://nanp.themenew.net/" target="_blank">Địa chỉ dự án phiên bản nguyên bản</a></nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Tài liệu trực tuyến"><a class="operate-text" href="http://nanp.themenew.net/" target="_blank">Tài liệu trực tuyến</a></nz-descriptions-item>
+    </nz-descriptions>
+  </nz-card>
+
+  <nz-card class="m-b-20" [nzBordered]="true">
+    <nz-descriptions nzBordered nzTitle="package.json" [nzColumn]="{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }" [nzSize]="'small'">
+      <nz-descriptions-item nzTitle="@amap/amap-jsapi-loader">Gói Amap (Bản đồ Amap)</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="@antv/g2plot">Gói g2 (Biểu đồ g2)</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="@antv/l7">Gói antv l7 (Bản đồ l7 của antv)</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="@antv/x6">Gói x6 (Sơ đồ quy trình x6)</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="@auth0/angular-jwt">Gói jwt-decode (Giải mã jwt)</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="@tinymce/tinymce-angular">Gói Rich Text (Văn bản phong phú)</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="angular-password-strength-meter">Gói mức độ mạnh mật khẩu</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="zxcvbn3">Mức độ mạnh mật khẩu trước đó cần phải cài đặt cùng gói này</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="crypto-js">Mã hóa và giải mã sử dụng trong khóa màn hình</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="angular2-qrcode">Gói mã vạch</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="driver.js">Trang hướng dẫn đầu tiên khi tải lần đầu</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="ng-zorro-antd">Gói Zorro</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="ngx-quicklink">Chiến lược tải trước</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="screenfull">Toàn màn hình</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="uuid">ID duy nhất</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="ngx-color-picker">Bộ chọn màu</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="file-saver">Tải xuống tập tin</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="ngx-echarts">Biểu đồ</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="echarts">Cũng là biểu đồ</nz-descriptions-item>
+    </nz-descriptions>
+  </nz-card>
+</div>

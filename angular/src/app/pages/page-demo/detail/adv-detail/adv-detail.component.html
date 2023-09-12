@@ -1,0 +1,149 @@
+<!--Phần đầu-->
+<app-page-header [pageHeaderInfo]="pageHeaderInfo" />
+<ng-template #headerExtra>
+  <nz-radio-group>
+    <label nz-radio-button>Hoạt động một</label>
+    <label nz-radio-button>Hoạt động hai</label>
+    <label nz-dropdown nz-radio-button [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
+      <i nz-icon nzTheme="outline" nzType="ellipsis"></i>
+    </label>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>Tùy chọn một</li>
+        <li nz-menu-item>Tùy chọn hai</li>
+        <li nz-menu-item>Tùy chọn ba</li>
+      </ul>
+    </nz-dropdown-menu>
+  </nz-radio-group>
+  <button nz-button nzType="primary">Hoạt động chính</button>
+</ng-template>
+<ng-template #headerContent>
+  <div nz-row>
+    <div nz-col [nzLg]="18" [nzMd]="16" [nzSm]="24" [nzXl]="18" [nzXs]="24" [nzXXl]="20">
+      <nz-descriptions nzSize="small" [nzColumn]="{ xxl: 2, xl: 2, lg: 2, md: 2, sm: 1, xs: 1 }">
+        <nz-descriptions-item nzTitle="người sáng lập">Nam pham</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Đặt hàng sản phẩm">XX Phục vụ</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="thời gian sáng tạo">2017-07-07</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Tài liệu liên quan"><a class="operate-text">12421</a></nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Ngày có hiệu lực">2017-07-07 ~ 2017-08-08</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Nhận xét">Vui lòng xác nhận trong vòng hai ngày làm việc</nz-descriptions-item>
+      </nz-descriptions>
+    </div>
+    <div nz-col [nzLg]="6" [nzMd]="8" [nzSm]="24" [nzXl]="6" [nzXs]="24" [nzXXl]="4">
+      <div class="left-start-center">
+        <nz-statistic class="m-r-25" nzTitle="Tình trạng" nzValue="Chưa giải quyết"></nz-statistic>
+        <nz-statistic nzPrefix="¥" nzTitle="Số lượng đơn đặt hàng" [nzValue]="568.08"></nz-statistic>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #headerFooter>
+  <nz-tabset [(nzSelectedIndex)]="currentSelTab">
+    <nz-tab nzTitle="Chi tiết" (nzClick)="to(tabEnum.Detail)"></nz-tab>
+    <nz-tab nzTitle="luật lệ" (nzClick)="to(tabEnum.Rule)"></nz-tab>
+  </nz-tabset>
+</ng-template>
+
+<div class="normal-table-wrap">
+  <nz-card [nzTitle]="'Quá trình tiến trình'">
+    <app-water-mark />
+    <nz-steps [nzCurrent]="1" [nzDirection]="stepDirection" [nzProgressDot]="progressTemplate">
+      <nz-step nzTitle="Tạo dự án" [nzDescription]="createTpl"></nz-step>
+      <nz-step nzTitle="Bộ phận xem xét sơ bộ" [nzDescription]="trialTpl"></nz-step>
+      <nz-step nzTitle="Đánh giá tài chính"></nz-step>
+      <nz-step nzTitle="Hoàn thành"></nz-step>
+    </nz-steps>
+    <ng-template #createTpl>
+      <div>
+        <span class="m-r-8">Nam Phạm</span>
+        <i nz-icon nzTheme="outline" nzType="dingding"></i>
+      </div>
+      <div>2016-12-12 12:32</div>
+    </ng-template>
+    <ng-template #trialTpl>
+      <div>
+        <span class="m-r-8">Nam Phạm</span>
+        <i nz-icon nzTheme="outline" nzType="dingding" style="color: rgb(0, 160, 233)"></i>
+      </div>
+      <div>
+        <a class="operate-text">Cấp bách</a>
+      </div>
+    </ng-template>
+    <ng-template #progressTemplate let-dot let-index="index" let-status="status">
+      <span nz-popover style="margin-left: -100%" [nzPopoverContent]="trialPopTpl">
+        <ng-template [ngTemplateOutlet]="dot"></ng-template>
+      </span>
+    </ng-template>
+    <ng-template #trialPopTpl>
+      <div style="width: 160px">
+        <div class="flex">
+          <div class="flex-1">Hoàng Lưu</div>
+          <nz-badge nzStatus="default" nzText="Không phản hồi"></nz-badge>
+        </div>
+        <div class="mt5">Thời gian thực hiện: 2 giờ 25 phút</div>
+      </div>
+    </ng-template>
+  </nz-card>
+
+  <nz-card class="m-t-20" [nzTitle]="'thông tin người dùng'">
+    <app-water-mark />
+    <nz-descriptions>
+      <nz-descriptions-item nzTitle="Tên tài khoản">Phạm Cẩm Khả</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Số thẻ thành viên">32943898021309809423</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="CMND">3321944288191034921</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Thông tin liên lạc">18112345678</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Địa chỉ liên hệ" [nzSpan]="2">112 Lê Đại Hành, P. Tây Lộc, TP. Huế, Thừa Thiên Huế</nz-descriptions-item>
+    </nz-descriptions>
+    <nz-descriptions class="m-t-20" nzTitle="Nhóm tin nhắn">
+      <nz-descriptions-item nzTitle="Dữ liệu tương tự">725</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Thời gian cập nhật dữ liệu">2017-08-08</nz-descriptions-item>
+      <nz-descriptions-item [nzTitle]="dataTitleTpl">725</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Thời gian cập nhật dữ liệu">2017-08-08</nz-descriptions-item>
+    </nz-descriptions>
+    <ng-template #dataTitleTpl>
+      Dữ liệu tương tự
+      <i class="title-icon" nz-icon nz-tooltip nzTheme="outline" nzTooltipTitle="Dữ liệu cho thấy" nzType="info-circle"></i>
+    </ng-template>
+    <h3 class="m-t-20">nhóm thông tin</h3>
+    <nz-card class="m-t-20" nzTitle="Nhóm thông tin đa cấp" nzType="inner">
+      <nz-descriptions nzTitle="Tên nhóm">
+        <nz-descriptions-item nzTitle="hiệu trưởng">Nam Phạm</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="mã vai trò">1234567</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Phòng">Công ty XX - Phòng YY</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Hết hạn">2017-08-08</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="mô tả" [nzSpan]="2">Mô tả này dài, dài, dài, dài, dài, dài, dài, dài, dài, dài, dài, dài, dài...</nz-descriptions-item>
+      </nz-descriptions>
+      <nz-divider></nz-divider>
+      <nz-descriptions nzTitle="Tên nhóm" [nzColumn]="1">
+        <nz-descriptions-item nzTitle="tên khoa học">Citrullus lanatus (Thunb.) Matsum. et Nakai là một loại cây leo leo hàng năm; thân và cành dày và có gân rõ ràng. Các gân dày hơn..</nz-descriptions-item>
+      </nz-descriptions>
+      <nz-divider></nz-divider>
+      <nz-descriptions nzTitle="Tên nhóm">
+        <nz-descriptions-item nzTitle="hiệu trưởng">Nam Phạm</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="mã vai trò">1234568</nz-descriptions-item>
+      </nz-descriptions>
+    </nz-card>
+  </nz-card>
+
+  <nz-card class="m-t-20" [nzTitle]="'Bản ghi cuộc gọi của người dùng trong sáu tháng qua'">
+    <app-water-mark />
+    <nz-empty></nz-empty>
+  </nz-card>
+
+  <nz-card class="m-t-20">
+    <app-water-mark />
+    <nz-card-tab>
+      <nz-tabset nzSize="large">
+        <nz-tab nzTitle="Nhật ký hoạt động một"></nz-tab>
+        <nz-tab nzTitle="Nhật ký hoạt động hai"></nz-tab>
+        <nz-tab nzTitle="Nhật ký hoạt động ba"></nz-tab>
+      </nz-tabset>
+    </nz-card-tab>
+    <app-ant-table [tableConfig]="returnTableConfig" [tableData]="returnDataList"></app-ant-table>
+  </nz-card>
+</div>
+
+<ng-template #highLightTpl let-code="code">
+  <nz-badge nzStatus="processing" nzText="thành công"></nz-badge>
+  Và {{ code }}
+</ng-template>

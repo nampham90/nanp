@@ -1,0 +1,53 @@
+<form class="form-wrap p-b-0 center-row" nz-form [class.p-0]="stepDirection === 'vertical'" [formGroup]="validateForm">
+  <nz-form-item>
+    <nz-form-label nzFor="title" nzRequired [nzSm]="6" [nzXs]="24">tài khoản thanh toán</nz-form-label>
+    <nz-form-control nzErrorTip="Vui lòng nhập tài khoản thanh toán" [nzSm]="14" [nzXs]="24">
+      <nz-select formControlName="paymentAccount">
+        <nz-option nzLabel="ant-design@alipay.com" nzValue="ant-design@alipay.com"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="a" nzRequired [nzSm]="6" [nzXs]="24">Những tài khoản có thể nhận được</nz-form-label>
+    <nz-form-control nzErrorTip="Vui lòng nhập tài khoản thanh toán" [nzSm]="14" [nzXs]="24">
+      <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+        <ng-template #addOnBeforeTemplate>
+          <nz-select class="phone-select" formControlName="payWay" style="width: 90px">
+            <nz-option nzLabel="ZaloPay" nzValue="zhifubao"></nz-option>
+            <nz-option nzLabel="Thẻ ngân hàng" nzValue="bankcard"></nz-option>
+          </nz-select>
+        </ng-template>
+        <input id="'payWayNo'" formControlName="payWayNo" nz-input />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="payeeName" nzRequired [nzSm]="6" [nzXs]="24">Tên người nhận</nz-form-label>
+    <nz-form-control nzErrorTip="Vùi lòng nhập tên người nhận" [nzSm]="14" [nzXs]="24">
+      <input id="payeeName" formControlName="payeeName" nz-input placeholder="Tên người nhận" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="a" nzRequired [nzSm]="6" [nzXs]="24">Số tiền thanh toán</nz-form-label>
+    <nz-form-control nzErrorTip="Vui lòng nhập số tiền thanh toán" [nzSm]="14" [nzXs]="24">
+      <nz-input-group nzPrefix="￥">
+        <input type="number" formControlName="amount" nz-input />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item nz-row>
+    <div nz-col [nzSpan]="6"></div>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <button nz-button nzType="primary" (click)="goNext()">Bước tiếp theo</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+<nz-divider></nz-divider>
+<section class="desc-wrap" [class.p-0]="stepDirection === 'vertical'">
+  <h3 nz-typography nzType="secondary">Minh họa</h3>
+  <h4 nz-typography nzType="secondary">Chuyển vào tài khoản ZaloPay</h4>
+  <p nz-typography nzType="secondary">Nếu cần, một số câu hỏi thường gặp về sản phẩm có thể được đặt tại đây. Nếu cần, một số câu hỏi thường gặp về sản phẩm có thể được đặt tại đây. Nếu cần, một số câu hỏi thường gặp về sản phẩm có thể được đặt tại đây.</p>
+  <h4 nz-typography nzType="secondary">Chuyển vào thẻ ngân hàng</h4>
+  <p nz-typography nzType="secondary">Nếu cần, một số câu hỏi thường gặp về sản phẩm có thể được đặt tại đây. Nếu cần, một số câu hỏi thường gặp về sản phẩm có thể được đặt tại đây. Nếu cần, một số câu hỏi thường gặp về sản phẩm có thể được đặt tại đây.</p>
+</section>
